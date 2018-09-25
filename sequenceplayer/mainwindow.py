@@ -439,12 +439,12 @@ class SequencePlayer(QtWidgets.QMainWindow):
                 delta = event.delta()
             elif 'angleDelta' in dir(event):
                 delta = event.angleDelta()
-            if delta and delta.y() > 0:
-                self.playbackStop()
-                self.frameIncrement()
-            else:
+            if delta and delta > 0:
                 self.playbackStop()
                 self.frameDecrement()
+            else:
+                self.playbackStop()
+                self.frameIncrement()
         return QtWidgets.QMainWindow.eventFilter(self, widget, event)
 
     def loadSettings(self):

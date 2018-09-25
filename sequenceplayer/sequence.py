@@ -4,7 +4,6 @@
 Sequence player sequence classes
 """
 
-
 import logging
 import os
 
