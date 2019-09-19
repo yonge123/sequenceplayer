@@ -48,7 +48,6 @@ class SequencePlayer(QtWidgets.QMainWindow):
         self.setWindowTitle('Sequence Player')
         ui_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'mainwindow.ui')
         if os.path.isfile(ui_path):
-            print(ui_path)
             loader = QUiLoader()
             self.ui = loader.load(ui_path)
             self.ui.checkbox_live_update.setToolTip('Check for new sequence files every %.1f seconds' %

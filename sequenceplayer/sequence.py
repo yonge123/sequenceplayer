@@ -71,3 +71,4 @@ class Sequence(QtCore.QObject):
                 self.frames.update({frame: SequenceFrame(path % abs(frame))})
             return self.frames[frame]
         return None
+
