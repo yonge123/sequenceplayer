@@ -7,14 +7,14 @@ Sequence player sequence classes
 import logging
 import os
 
-from Qt import QtCore, QtGui
+from PySide2 import QtCore, QtGui
 
 logger = logging.getLogger(__name__)
 
 
 def addImageFormatsSupport():
-    import PySide
-    QtCore.QCoreApplication.addLibraryPath(os.path.join(os.path.dirname(PySide.__file__), 'plugins'))
+    import PySide2
+    QtCore.QCoreApplication.addLibraryPath(os.path.join(os.path.dirname(PySide2.__file__), 'plugins'))
 
 
 addImageFormatsSupport()

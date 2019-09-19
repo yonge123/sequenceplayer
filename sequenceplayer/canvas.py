@@ -6,7 +6,7 @@ Sequence player canvas
 
 import logging
 
-from Qt import QtWidgets
+from PySide2 import QtWidgets
 
 logger = logging.getLogger(__name__)
 

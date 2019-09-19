@@ -9,10 +9,12 @@ import logging
 import os
 import re
 
-from Qt import QtCore, QtWidgets, QtCompat
+from PySide2 import QtCore, QtWidgets
+from PySide2.QtUiTools import QUiLoader
 
-import canvas
-import sequence
+
+import sequenceplayer.canvas as canvas
+import sequenceplayer.sequence as sequence
 
 logger = logging.getLogger(__name__)
 
@@ -44,9 +46,11 @@ class SequencePlayer(QtWidgets.QMainWindow):
 
     def loadUi(self):
         self.setWindowTitle('Sequence Player')
-        ui_path = os.path.join(os.path.dirname(__file__), 'mainwindow.ui')
-        if os.path.exists(ui_path):
-            self.ui = QtCompat.load_ui(ui_path)
+        ui_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'mainwindow.ui')
+        if os.path.isfile(ui_path):
+            print(ui_path)
+            loader = QUiLoader()
+            self.ui = loader.load(ui_path)
             self.ui.checkbox_live_update.setToolTip('Check for new sequence files every %.1f seconds' %
                                                     LIVE_UPDATE_INTERVAL_SECONDS +\
                                                     '(auto-disabled after 1 minute)')

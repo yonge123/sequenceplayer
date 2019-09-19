@@ -7,9 +7,8 @@ Sequence player
 import argparse
 import logging
 
-from Qt import QtCore, QtWidgets
-
-import mainwindow
+from PySide2 import QtCore, QtWidgets
+import sequenceplayer.mainwindow as mainwindow
 
 logger = logging.getLogger(__name__)
 
